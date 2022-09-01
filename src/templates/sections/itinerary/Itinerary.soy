@@ -1,0 +1,108 @@
+{namespace sections.itinerary}
+
+{template .Itinerary}
+  {@param baseUrl: uri}
+
+  {let $travelPath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.travel /}{/param}
+    {/call}
+  {/let}
+
+  {let $timeStartRehearsal kind="html"}{call constants.timeStartRehearsal /}{/let}
+  {let $timeStartRehearsalDinner kind="html"}{call constants.timeStartRehearsalDinner /}{/let}
+  {let $timeStartCeremony kind="html"}{call constants.timeStartCeremony /}{/let}
+  {let $timeStartReception kind="html"}{call constants.timeStartReception /}{/let}
+
+  {let $rehearsalText kind="html"}
+    Wedding rehearsal at
+    {sp}
+    <a class="Link--primary" href="{call constants.directionsUrlCeremonyVenue /}"{call common.helpers.linkNewTab /}>
+      Ceremony Venue Name
+    </a>
+  {/let}
+  {let $rehearsalDinnerText kind="html"}
+    Rehearsal dinner
+  {/let}
+  {let $ceremonyText kind="html"}
+    Wedding at
+    {sp}
+    <a class="Link--primary" href="{call constants.directionsUrlCeremonyVenue /}"{call common.helpers.linkNewTab /}>
+      Ceremony Venue Name
+    </a>
+  {/let}
+  {let $receptionText kind="html"}
+    Reception at
+    {sp}
+    <a class="Link--primary" href="{call constants.directionsUrlHfsc /}"{call common.helpers.linkNewTab /}>
+      Reception Venue Name
+    </a>
+  {/let}
+
+  {let $itinerary: [
+    [
+      'date': 'Friday, April 28 2023',
+      'events': [
+        [
+          'text': $rehearsalText,
+          'time': $timeStartRehearsal
+        ],
+        [
+          'text': $rehearsalDinnerText,
+          'time': $timeStartRehearsalDinner
+        ]
+      ]
+    ],
+    [
+      'date': 'Saturday, April 29 2023',
+      'events': [
+        [
+          'text': $ceremonyText,
+          'time': $timeStartCeremony
+        ],
+        [
+          'text': $receptionText,
+          'time': $timeStartReception
+        ]
+      ]
+    ]
+  ] /}
+
+  {call modules.Section}
+    {param baseClass: 'Itinerary' /}
+    {param content kind="html"}
+      {foreach $day in $itinerary}
+        <div class="Itinerary-day">
+          <h2 class="Itinerary-date">
+            {$day.date}
+          </h2>
+
+          <table class="Itinerary-events u-hidetableheader">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Event</th>
+              </tr>
+            </thead>
+            <tbody>
+              {foreach $event in $day.events}
+                <tr class="Itinerary-event">
+                  <td class="Itinerary-time">
+                    {$event.time}
+                  </td>
+                  <td class="Itinerary-text">
+                    {$event.text}
+                  </td>
+                </tr>
+              {/foreach}
+            </tbody>
+          </table>
+        </div>
+      {/foreach}
+
+      <a class="Itinerary-cta" href="{$baseUrl + $travelPath}">
+        Travel Information
+      </a>
+    {/param}
+  {/call}
+{/template}

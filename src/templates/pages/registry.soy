@@ -1,0 +1,34 @@
+{namespace page}
+
+{template .registry}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+  {@param baseUrl: uri}
+  {@param hostname: uri}
+  {@param pathname: uri}
+  {@param protocol: string}
+
+  {call common.layout data="all"}
+    {param description: 'Join us in celebrating our wedding! RSVP, find travel information, view the itinerary, and browse our registry.' /}
+    {param favicon: $assets['images/favicon.png'].url /}
+    {param headIncludes kind="html"}
+      <link rel="stylesheet" href="{$assets['registry.css'].url}">
+      <script src="{$assets['registry.js'].trustedUrl}" defer></script>
+    {/param}
+    {param pageContent kind="html"}
+      {call modules.Hero}
+        {param title: 'Registry' /}
+      {/call}
+
+      {call sections.registry.Registry data="all" /}
+    {/param}
+    {param title: 'Registry | Shelby & Anthony\'s Wedding' /}
+  {/call}
+{/template}

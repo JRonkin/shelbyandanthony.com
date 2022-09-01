@@ -1,0 +1,70 @@
+{namespace modules}
+
+{template .Header}
+  {@param baseUrl: uri}
+  {@param pathname: uri}
+
+  {let $cleanPathname kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname: $pathname /}
+    {/call}
+  {/let}
+
+  {let $homePath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.home /}{/param}
+    {/call}
+  {/let}
+  {let $aboutPath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.about /}{/param}
+    {/call}
+  {/let}
+  {let $travelPath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.travel /}{/param}
+    {/call}
+  {/let}
+  {let $itineraryPath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.itinerary /}{/param}
+    {/call}
+  {/let}
+  {let $registryPath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.registry /}{/param}
+    {/call}
+  {/let}
+
+  {let $links: [
+    ['text': 'Home', 'url': $baseUrl + $homePath],
+    ['text': 'Our Story', 'url': $baseUrl + $aboutPath],
+    ['text': 'Travel Information', 'url': $baseUrl + $travelPath],
+    ['text': 'Itinerary', 'url': $baseUrl + $itineraryPath],
+    ['text': 'Registry', 'url': $baseUrl + $registryPath]
+  ] /}
+
+  <header class="Header js-header">
+    <button class="Header-menuToggle js-header-toggle u-notransition"
+            aria-controls="header-menu"
+            aria-label="Expand or collapse menu">
+    </button>
+
+    <nav class="Header-menu"
+         id="header-menu"
+         aria-expanded="false"
+         aria-hidden="true">
+      {foreach $link in $links}
+        {let $isCurrent: $link.url == $baseUrl + $cleanPathname /}
+
+        <a class="Header-link{if $isCurrent} Header-link--current{/if}" href="{$link.url}">
+          {$link.text}
+        </a>
+      {/foreach}
+    </nav>
+
+    <a class="Header-cta" href="{call constants.rsvpUrl /}"{call common.helpers.linkNewTab /}>
+      RSVP
+    </a>
+  </header>
+{/template}

@@ -1,0 +1,43 @@
+{namespace page}
+
+{template .travel}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+  {@param baseUrl: uri}
+  {@param hostname: uri}
+  {@param pathname: uri}
+  {@param protocol: string}
+
+  {call common.layout data="all"}
+    {param description: 'Join us in celebrating our wedding! RSVP, find travel information, view the itinerary, and browse our registry.' /}
+    {param favicon: $assets['images/favicon.png'].url /}
+    {param headIncludes kind="html"}
+      <link rel="stylesheet" href="{$assets['travel.css'].url}">
+      <script src="{$assets['travel.js'].trustedUrl}" defer></script>
+    {/param}
+    {param pageContent kind="html"}
+      {call modules.Banner}
+        {param content kind="html"}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        {/param}
+        {param modifier: 'info' /}
+      {/call}
+      {call modules.Hero}
+        {param title: 'Travel Information' /}
+      {/call}
+      {call sections.travel.Ceremony data="all" /}
+      {call sections.travel.Reception data="all" /}
+      {call sections.travel.Hotels data="all" /}
+      {call sections.travel.Parking data="all" /}
+      {call sections.travel.Transportation data="all" /}
+    {/param}
+    {param title: 'Travel Information | Shelby & Anthony\'s Wedding' /}
+  {/call}
+{/template}

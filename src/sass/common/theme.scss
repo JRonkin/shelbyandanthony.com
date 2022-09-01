@@ -1,0 +1,27 @@
+html
+{
+  min-height: 100%;
+}
+
+html,
+body
+{
+  display: flex;
+  flex-direction: column;
+}
+
+body
+{
+  @extend .Text;
+
+  > *
+  {
+    flex-shrink: 0;
+  }
+}
+
+body,
+main
+{
+  flex-grow: 1;
+}

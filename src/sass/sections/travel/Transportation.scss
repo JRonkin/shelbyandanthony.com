@@ -1,0 +1,40 @@
+/** @define Transportation */
+
+.Transportation
+{
+  &-directions
+  {
+    margin-top: 24px;
+  }
+
+  &-directionsTitle
+  {
+    @extend .Heading--sub;
+
+    text-align: center;
+  }
+
+  &-directionsStep
+  {
+    @extend .List-item;
+
+    margin-top: 6px;
+  }
+
+  @include bpgte($bp-desktop-min)
+  {
+    &-directionsWrapper
+    {
+      display: flex;
+      margin-right: -16px;
+      margin-left: -16px;
+    }
+
+    &-directions
+    {
+      width: 50%;
+      flex-shrink: 0;
+      padding: 0 16px;
+    }
+  }
+}

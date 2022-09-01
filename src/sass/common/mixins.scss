@@ -1,0 +1,40 @@
+@mixin bp($min, $max: $min)
+{
+  $mq: '';
+
+  @if ($min != null)
+  {
+    $mq: '(min-width: #{$min})';
+  }
+
+  @if ($min != null and $max != null)
+  {
+    $mq: '#{$mq} and ';
+  }
+
+  @if ($max != null)
+  {
+    $mq: '#{$mq}(max-width: #{$max})';
+  }
+
+  @media #{$mq}
+  {
+    @content;
+  }
+}
+
+@mixin bplte($max)
+{
+  @include bp(null, $max)
+  {
+    @content;
+  }
+}
+
+@mixin bpgte($min)
+{
+  @include bp($min, null)
+  {
+    @content;
+  }
+}

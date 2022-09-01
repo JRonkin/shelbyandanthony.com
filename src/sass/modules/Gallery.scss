@@ -1,0 +1,191 @@
+/** @define Gallery */
+
+$gallery-modal-margin-mobile: 32px !default;
+$gallery-modal-margin-desktop: 64px !default;
+$gallery-modal-button-size: 56px !default;
+
+.Gallery
+{
+  position: relative;
+
+  &-display
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+  }
+
+  &-button
+  {
+    position: relative;
+    padding-top: 100%;
+  }
+
+  &:not(.is-secret) &-button--secret
+  {
+    display: none;
+  }
+
+  &-image
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &-modalWrapper
+  {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    background: #0008;
+    padding: $gallery-modal-margin-mobile;
+    justify-content: center;
+    align-items: center;
+    transition: z-index 0s 0.3s, visibility 0s 0.3s, opacity 0.3s ease;
+
+    &.is-shown
+    {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &-modal
+  {
+    position: relative;
+    border-radius: 8px;
+    cursor: auto;
+    width: 100%;
+    background: $theme-color-light;
+    padding: 32px 32px 8px;
+    overflow: hidden;
+  }
+
+  &-prev,
+  &-next
+  {
+    display: block;
+    position: absolute;
+    top: calc(50% - #{$gallery-modal-button-size});
+    z-index: 1;
+    opacity: 0.5;
+    border-radius: 50%;
+    height: $gallery-modal-button-size;
+    width: $gallery-modal-button-size;
+    background: #0008;
+    transition: opacity $transition-default;
+
+    &:hover
+    {
+      opacity: 1;
+    }
+
+    &::before,
+    &::after
+    {
+      position: absolute;
+      top: $gallery-modal-button-size / 2 - $gallery-modal-button-size / 32;
+      left: $gallery-modal-button-size / 4;
+      transform-origin: left;
+      height: $gallery-modal-button-size / 16;
+      width: $gallery-modal-button-size / 2;
+      background: $theme-color-light;
+      content: '';
+    }
+
+    &::before
+    {
+      transform: rotate(-42deg) translateY(#{$gallery-modal-button-size / 40});
+    }
+
+    &::after
+    {
+      transform: rotate(42deg) translateY(#{-$gallery-modal-button-size / 40});
+    }
+  }
+
+  &-prev
+  {
+    left: -$gallery-modal-button-size / 2 + 32px;
+  }
+
+  &-next
+  {
+    right: -$gallery-modal-button-size / 2 + 32px;
+    transform: scaleX(-1);
+  }
+
+  &-slideImage
+  {
+    width: 100%;
+    max-height: calc(100vh - #{2 * ($gallery-modal-margin-mobile + 32px)});
+    object-fit: contain;
+  }
+
+  &-slide:not(.tns-slide-active) &-slideImage
+  {
+    display: none;
+  }
+
+  &-caption
+  {
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  &-secretButton
+  {
+    position: absolute;
+    right: 0;
+    bottom: -64px;
+    height: 48px;
+    width: 64px;
+  }
+
+  &.is-secret &-secretButton
+  {
+    display: none;
+  }
+
+  @include bpgte($bp-desktop-min)
+  {
+    &-display
+    {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &-button
+    {
+      transition: transform $transition-default;
+
+      &:hover
+      {
+        transform: scale(1.05);
+      }
+    }
+
+    &-modalWrapper
+    {
+      padding: $gallery-modal-margin-desktop;
+    }
+
+    &-slideImage
+    {
+      max-height: calc(100vh - #{2 * ($gallery-modal-margin-desktop + 32px)});
+    }
+  }
+}

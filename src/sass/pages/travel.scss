@@ -1,0 +1,34 @@
+@import '../common/common.scss';
+
+// Modules
+@import '../modules/Banner.scss';
+@import '../modules/LocationMap.scss';
+
+// Sections
+@import '../sections/travel/Ceremony.scss';
+@import '../sections/travel/Reception.scss';
+@import '../sections/travel/Hotels.scss';
+@import '../sections/travel/Parking.scss';
+@import '../sections/travel/Transportation.scss';
+
+// Overrides
+
+.LocationMap
+{
+  margin: 32px auto;
+  padding: 0 16px;
+
+  &:last-child
+  {
+    margin-bottom: 0;
+  }
+}
+
+@include bpgte($bp-desktop-min)
+{
+  .LocationMap
+  {
+    width: 75%;
+    padding: 0;
+  }
+}

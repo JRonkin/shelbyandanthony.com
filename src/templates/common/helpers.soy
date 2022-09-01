@@ -1,0 +1,31 @@
+{namespace common.helpers}
+
+{template .absoluteUrl kind="uri"}
+  {@param hostname: uri}
+  {@param pathname: uri}
+  {@param protocol: string}
+
+  {let $cleanPathname kind="uri"}
+    {call .cleanPathname}
+      {param pathname: $pathname /}
+    {/call}
+  {/let}
+
+  {$protocol + '//' + $hostname + ($cleanPathname ? '/' + $cleanPathname : '')}
+{/template}
+
+{template .cleanPathname kind="uri"}
+  {@param pathname: uri}
+
+  {let $pathLen: strLen($pathname) /}
+
+  {strSub($pathname, 0, $pathLen - (
+    strSub('/' + $pathname, max($pathLen - 10, 0)) == '/index.html' ? 10 :
+    $pathLen > 5 and strSub($pathname, $pathLen - 5) == '.html' and strSub($pathname, $pathLen - 6) != '/.html' ? 5 :
+    0
+  ))}
+{/template}
+
+{template .linkNewTab kind="attributes"}
+  {sp}target="_blank" rel="noreferrer"
+{/template}

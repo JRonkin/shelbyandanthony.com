@@ -1,0 +1,29 @@
+{namespace modules}
+
+{template .Section}
+  {@param? baseClass: string}
+  {@param content: html}
+  {@param? id: string}
+  {@param? modifier: string}
+  {@param? title: string}
+
+  <{$title ? 'section' : 'div'}{sp}
+    class="Section
+           {if $baseClass} {$baseClass}{/if}
+           {if $modifier}
+             {sp}Section--{$modifier}
+             {if $baseClass} {$baseClass}--{$modifier}{/if}
+           {/if}"
+    {if $id} id="{$id}"{/if}
+  >
+    {if $title}
+      <h2 class="Section-title{if $baseClass} {$baseClass}-title{/if}">
+        {$title}
+      </h2>
+    {/if}
+
+    <div class="Section-content{if $baseClass} {$baseClass}-content{/if}">
+      {$content}
+    </div>
+  </{$title ? 'section' : 'div'}>
+{/template}

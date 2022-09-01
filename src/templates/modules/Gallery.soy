@@ -1,0 +1,81 @@
+{namespace modules}
+
+{template .Gallery}
+  {@param images: list<[
+    caption: string,
+    image: [height: int, url: uri, width: int],
+    thumbnail: [height: int, url: uri, width: int]
+  ]>}
+  {@param? secretImages: list<[
+    caption: string,
+    image: [height: int, url: uri, width: int],
+    thumbnail: [height: int, url: uri, width: int]
+  ]>}
+  {@param? secretSound: uri}
+
+  <section class="Gallery js-gallery">
+    <div class="Gallery-display">
+      {foreach $image in $images}
+        <button class="Gallery-button js-gallery-button">
+          <img class="Gallery-image"
+               src="{$image.thumbnail.url}"
+               alt="{$image.caption}"
+               style="aspect-ratio: {$image.thumbnail.width} / {$image.thumbnail.height}"
+               loading="lazy">
+        </button>
+      {/foreach}
+      {foreach $image in $secretImages ?: []}
+        <button class="Gallery-button Gallery-button--secret js-gallery-button">
+          <img class="Gallery-image"
+               src="{$image.thumbnail.url}"
+               alt="{$image.caption}"
+               style="aspect-ratio: {$image.thumbnail.width} / {$image.thumbnail.height}"
+               loading="lazy">
+        </button>
+      {/foreach}
+    </div>
+
+    <div class="Gallery-modalWrapper js-gallery-modal u-notransition">
+      <div class="Gallery-modal">
+        <button class="Gallery-prev js-gallery-prev" aria-label="Show previous slide"></button>
+        <button class="Gallery-next js-gallery-next" aria-label="Show next slide"></button>
+        <div class="Gallery-carousel js-gallery-carousel">
+          {foreach $image in $images}
+            <div class="Gallery-slide">
+              <img class="Gallery-slideImage"
+                   src="{$image.image.url}"
+                   alt=""
+                   style="aspect-ratio: {$image.image.width} / {$image.image.height}"
+                   loading="lazy">
+              {if $image.caption}
+                <div class="Gallery-caption">
+                  {$image.caption}
+                </div>
+              {/if}
+            </div>
+          {/foreach}
+        </div>
+      </div>
+    </div>
+
+    {if length($secretImages ?: [])}
+      <div class="js-gallery-secret" hidden{if $secretSound} data-audio="{$secretSound}"{/if}>
+        {foreach $image in $secretImages ?: []}
+          <div class="Gallery-slide">
+            <img class="Gallery-slideImage"
+                 src="{$image.image.url}"
+                 alt=""
+                 style="aspect-ratio: {$image.image.width} / {$image.image.height}"
+                 loading="lazy">
+            {if $image.caption}
+              <div class="Gallery-caption">
+                {$image.caption}
+              </div>
+            {/if}
+          </div>
+        {/foreach}
+      </div>
+      <button class="Gallery-secretButton js-gallery-secretbutton" aria-label="Reveal secret gallery images"></button>
+    {/if}
+  </section>
+{/template}

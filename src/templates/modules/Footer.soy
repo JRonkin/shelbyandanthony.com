@@ -1,0 +1,15 @@
+{namespace modules}
+
+{template .Footer}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+
+  <footer class="Footer" style="background-image: url({$assets['images/border.jpg'].url})"></footer>
+{/template}

@@ -1,0 +1,14 @@
+/** @define Footer */
+
+.Footer
+{
+  margin-top: 16px;
+  height: 40px;
+  background-position: center;
+  background-size: auto 100%;
+
+  @include bpgte($bp-desktop-min)
+  {
+    height: 60px;
+  }
+}

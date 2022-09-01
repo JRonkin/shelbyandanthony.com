@@ -1,0 +1,22 @@
+/** @define OurStory */
+
+.OurStory
+{
+  &-paragraph
+  {
+    text-indent: 4ch;
+
+    &:not(:first-child)
+    {
+      margin-top: 1em;
+    }
+  }
+
+  @include bpgte($bp-desktop-min)
+  {
+    &-content
+    {
+      padding: 0 32px;
+    }
+  }
+}

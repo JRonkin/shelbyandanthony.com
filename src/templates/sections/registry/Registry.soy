@@ -1,0 +1,56 @@
+{namespace sections.registry}
+
+{template .Registry}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+
+  {let $stores: [
+    [
+      'image': $assets['images/logo-amazon.png'],
+      'name': 'Amazon',
+      'url': 'https://example.com'
+    ],
+    [
+      'image': $assets['images/logo-bedbathbeyond.png'],
+      'name': 'Bed Bath & Beyond',
+      'url': 'https://example.com'
+    ],
+    [
+      'image': $assets['images/logo-ikea.png'],
+      'name': 'IKEA',
+      'url': 'https://example.com'
+    ],
+    [
+      'image': $assets['images/logo-macys.png'],
+      'name': 'Macy\'s',
+      'url': 'https://example.com'
+    ]
+  ] /}
+
+  {call modules.Section}
+    {param baseClass: 'Registry' /}
+    {param content kind="html"}
+      We have registries at these stores:
+
+      <ul class="Registry-stores">
+        {foreach $store in $stores}
+          <li class="Registry-store">
+            <a class="Registry-link" href="{$store.url}"{call common.helpers.linkNewTab /}>
+              <img class="Registry-image"
+                   src="{$store.image.url}"
+                   alt="{$store.name}"
+                   style="aspect-ratio: {$store.image.width} / {$store.image.height}">
+            </a>
+          </li>
+        {/foreach}
+      </ul>
+    {/param}
+  {/call}
+{/template}

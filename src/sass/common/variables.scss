@@ -1,0 +1,32 @@
+$bp-mobile-max: 767px;
+$bp-desktop-min: 768px;
+
+$font-family-main: 'Outfit', sans-serif;
+$font-family-secondary: 'Vollkorn', serif;
+$font-family-cursive: 'Great Vibes', cursive;
+
+$font-weight-normal: 300;
+$font-weight-bold: 600;
+
+$navy-blue: #061572;
+$navy-blue-faded: #333d7f;
+$black: #000;
+$gray-light: #ccc;
+$gray-lightest: #eee;
+$white: #fff;
+
+$theme-color-primary: $navy-blue;
+$theme-color-primary-alt: $navy-blue-faded;
+$theme-color-dark: $black;
+$theme-color-light: $white;
+
+$text-color-primary: $theme-color-dark;
+$text-color-light: $theme-color-light;
+
+$border-light: 1px solid $gray-light;
+$border-lightest: 1px solid $gray-lightest;
+
+$shadow-default: 0 2px 3px #0003;
+$shadow-large: 0 4px 6px #0003;
+
+$transition-default: 0.3s ease;

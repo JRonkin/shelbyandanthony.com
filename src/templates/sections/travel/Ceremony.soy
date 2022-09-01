@@ -1,0 +1,36 @@
+{namespace sections.travel}
+
+{template .Ceremony}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+
+  {call modules.Section}
+    {param baseClass: 'Ceremony' /}
+    {param content kind="html"}
+      <div>
+        Ceremony Venue Name
+        <br>
+        123 Main St.
+        <br>
+        New York, NY 12345
+      </div>
+
+      {call modules.LocationMap}
+        {param additionalClasses: 'Ceremony-map' /}
+        {param embedUrl kind="uri"}
+          https://maps.google.com/maps?output=embed&q=New+York+City&z=17
+        {/param}
+        {param mapImage: $assets['images/placeholder.png'] /}
+        {param mapImageAlt: 'Map showing Ceremony Venue' /}
+      {/call}
+    {/param}
+    {param title: 'Ceremony' /}
+  {/call}
+{/template}

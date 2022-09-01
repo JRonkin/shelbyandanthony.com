@@ -1,0 +1,76 @@
+/** @define Registry */
+
+.Registry
+{
+  @extend .Text--large;
+
+  text-align: center;
+
+  &-stores
+  {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-store
+  {
+    padding-top: 32px;
+  }
+
+  &-link
+  {
+    display: flex;
+    position: relative;
+    top: 0;
+    box-shadow: $shadow-default;
+    border-radius: 8px;
+    width: 240px;
+    border: $border-lightest;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow $transition-default, top $transition-default;
+
+    &:hover
+    {
+      top: -4px;
+      box-shadow: $shadow-large;
+    }
+
+    &:active
+    {
+      top: 2px;
+      box-shadow: none;
+    }
+  }
+
+  &-image
+  {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  @include bpgte($bp-desktop-min)
+  {
+    &-stores
+    {
+      margin-left: -64px;
+      flex-direction: row;
+    }
+
+    &-store
+    {
+      padding-top: 64px;
+      padding-left: 64px;
+    }
+
+    &-link
+    {
+      height: 144px;
+      width: 256px;
+    }
+  }
+}

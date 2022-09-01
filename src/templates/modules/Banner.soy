@@ -1,0 +1,14 @@
+{namespace modules}
+
+{template .Banner}
+  {@param content: html}
+  {@param modifier: string}
+
+  <div class="Banner-wrapper">
+    {call modules.Section}
+      {param baseClass: 'Banner' /}
+      {param content: $content /}
+      {param modifier: $modifier /}
+    {/call}
+  </div>
+{/template}

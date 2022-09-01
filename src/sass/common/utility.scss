@@ -1,0 +1,35 @@
+table.u-hidetableheader
+{
+  thead
+  {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 0;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0;
+  }
+}
+
+html.u-noscroll
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.u-notransition
+{
+  &,
+  *
+  {
+    &,
+    &::before,
+    &::after
+    {
+      transition: none !important;
+    }
+  }
+}

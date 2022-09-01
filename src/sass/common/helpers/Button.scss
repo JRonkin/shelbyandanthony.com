@@ -1,0 +1,44 @@
+/** @define Button */
+
+.Button
+{
+  display: inline-block;
+  outline: 1px solid transparent;
+  outline-offset: -3px;
+  border-radius: 3px;
+  padding: 10px 20px;
+  line-height: 1;
+  font-family: $font-family-main;
+  letter-spacing: 1px;
+  transition: $transition-default;
+  transition-property: outline-color, background-color;
+
+  &--primary
+  {
+    @extend .Button;
+
+    background: $theme-color-primary;
+    color: $text-color-light;
+
+    &:hover,
+    &:focus
+    {
+      outline-color: currentColor;
+      background: $theme-color-primary-alt;
+    }
+  }
+
+  &--secondary
+  {
+    @extend .Button;
+
+    background: $theme-color-light;
+    color: $text-color-primary;
+
+    &:hover,
+    &:focus
+    {
+      outline-color: currentColor;
+    }
+  }
+}

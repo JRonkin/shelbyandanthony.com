@@ -1,0 +1,47 @@
+{namespace sections.travel}
+
+{template .Parking}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+
+  {call modules.Section}
+    {param baseClass: 'Parking' /}
+    {param content kind="html"}
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        For rates and more parking information, see
+        {sp}
+        <a class="Link--primary"
+           href="https://example.com"
+           {call common.helpers.linkNewTab /}>
+          Parking Information
+        </a>
+        . For detailed driving directions, see
+        {sp}
+        <a class="Link--primary"
+           href="https://example.com"
+           {call common.helpers.linkNewTab /}>
+          Driving Directions
+        </a>
+        .
+      </div>
+
+      {call modules.LocationMap}
+        {param additionalClasses: 'Parking-map' /}
+        {param embedUrl kind="uri"}
+          https://maps.google.com/maps?output=embed&q=New+York+City&z=17
+        {/param}
+        {param mapImage: $assets['images/placeholder.png'] /}
+        {param mapImageAlt: 'Map showing parking' /}
+      {/call}
+    {/param}
+    {param title: 'Parking' /}
+  {/call}
+{/template}

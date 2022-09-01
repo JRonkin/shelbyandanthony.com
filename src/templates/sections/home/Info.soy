@@ -1,0 +1,61 @@
+{namespace sections.home}
+
+{template .Info}
+  {@param baseUrl: uri}
+
+  {let $travelPath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.travel /}{/param}
+    {/call}
+  {/let}
+  {let $itineraryPath kind="uri"}
+    {call common.helpers.cleanPathname}
+      {param pathname kind="uri"}{call url.itinerary /}{/param}
+    {/call}
+  {/let}
+
+  {call modules.Section}
+    {param baseClass: 'Info' /}
+    {param content kind="html"}
+      <div class="Info-section">
+        <h2 class="Section-title Info-title">
+          Location
+        </h2>
+
+        <div class="Info-info">
+          Ceremony Venue Name
+          <br>
+          123 Main St.
+          <br>
+          New York, NY 12345
+        </div>
+
+        <a class="Info-cta" href="{$baseUrl + $travelPath}">
+          More Information
+        </a>
+      </div>
+
+      <div class="Info-section">
+        <h2 class="Section-title Info-title">
+          The Day Of
+        </h2>
+
+        <div class="Info-info">
+          04.29.23
+          <hr class="Info-separator">
+          Ceremony
+          <br>
+          {call constants.timeStartCeremony /} - {call constants.timeEndCeremony /}
+          <hr class="Info-separator">
+          Reception to Immediately Follow
+          <br>
+          {call constants.timeStartReception /} - {call constants.timeEndReception /}
+        </div>
+
+        <a class="Info-cta" href="{$baseUrl + $itineraryPath}">
+          Full Itinerary
+        </a>
+      </div>
+    {/param}
+  {/call}
+{/template}

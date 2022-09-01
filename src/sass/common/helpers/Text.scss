@@ -1,0 +1,16 @@
+/** @define Text */
+
+.Text
+{
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: $font-family-main;
+  font-weight: $font-weight-normal;
+
+  &--large
+  {
+    @extend .Text;
+
+    font-size: 18px;
+  }
+}

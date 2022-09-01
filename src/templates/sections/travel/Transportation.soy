@@ -1,0 +1,50 @@
+{namespace sections.travel}
+
+{template .Transportation}
+  {let $directionsSections: [
+    [
+      'steps': [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      ],
+      'title': 'From the Airport'
+    ],
+    [
+      'steps': [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      ],
+      'title': 'From the Train Station'
+    ]
+  ] /}
+
+  {call modules.Section}
+    {param baseClass: 'Transportation' /}
+    {param content kind="html"}
+      <div class="Transportation-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+
+      <div class="Transportation-directionsWrapper">
+        {foreach $directionsSection in $directionsSections}
+          <div class="Transportation-directions">
+            <h3 class="Transportation-directionsTitle">
+              {$directionsSection.title}
+            </h3>
+
+            <ol class="Transportation-directionsSteps">
+              {foreach $step in $directionsSection.steps}
+                <li class="Transportation-directionsStep">
+                  {$step}
+                </li>
+              {/foreach}
+            </ol>
+          </div>
+        {/foreach}
+      </div>
+    {/param}
+    {param title: 'Public Transportation' /}
+  {/call}
+{/template}

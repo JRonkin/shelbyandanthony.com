@@ -1,0 +1,98 @@
+{namespace sections.about}
+
+{template .Gallery}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+
+  {let $images: [
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ]
+  ] /}
+  {let $secretImages: [
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ],
+    [
+      'caption': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+      'image': $assets['images/placeholder.png'],
+      'thumbnail': $assets['images/thumbnail-placeholder.jpg']
+    ]
+  ] /}
+
+  {call modules.Section}
+    {param content kind="html"}
+      {call modules.Gallery}
+        {param images: $images /}
+        {param secretImages: $secretImages /}
+        {param secretSound: $assets['audio/zelda-secret.mp3'].url /}
+      {/call}
+    {/param}
+  {/call}
+{/template}
