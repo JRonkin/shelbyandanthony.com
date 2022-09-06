@@ -22,7 +22,7 @@ do
   shift
 done
 
-if [ "$changed" ]
+if [ "$changed" ] && git rev-parse --verify HEAD~1
 then
   files="$(git diff --diff-filter d --name-only HEAD~1 -- "$ASSETS_DIR")"
 else
