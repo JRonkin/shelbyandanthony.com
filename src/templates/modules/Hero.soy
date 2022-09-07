@@ -5,6 +5,7 @@
   {@param? ctaNewTab: bool}
   {@param? ctaText: string}
   {@param? ctaUrl: uri}
+  {@param? subtext: string}
   {@param? subtitle: string}
   {@param title: string}
 
@@ -17,6 +18,12 @@
     {if $subtitle}
       <div class="Hero-subtitle">
         {$subtitle}
+      </div>
+    {/if}
+
+    {if $subtext}
+      <div class="Hero-subtext">
+        {$subtext}
       </div>
     {/if}
 

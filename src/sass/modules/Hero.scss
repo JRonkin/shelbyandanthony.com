@@ -24,6 +24,13 @@
 
   &-subtitle
   {
+    @extend .Heading--sub;
+
+    margin-top: 24px;
+  }
+
+  &-subtext
+  {
     position: relative;
     margin-top: 24px;
     font-size: 24px;
