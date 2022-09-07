@@ -1,0 +1,40 @@
+{namespace modules}
+
+{template .YouTube}
+  {@param? additionalClasses: string}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+  {@param videoId: string}
+
+  {let $playIcon: $assets['images/youtube_play.png'] /}
+
+  <div class="YouTube{if $additionalClasses} {$additionalClasses}{/if} js-youtube">
+    <iframe class="YouTube-video js-youtube-iframe"
+      data-src="{'https://www.youtube.com/embed/' + $videoId + '?autoplay=1&color=white&modestbranding=1&rel=0'}"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      style="aspect-ratio: 16 / 9"
+    ></iframe>
+    <img class="YouTube-thumbnail"
+      src="{'https://img.youtube.com/vi/' + $videoId + '/hqdefault.jpg'}"
+      alt=""
+      loading="lazy"
+    >
+    <button class="YouTube-play js-youtube-play">
+      <img class="YouTube-playIcon"
+        src="{$playIcon.url}"
+        alt="Play video"
+        height="{$playIcon.height}"
+        width="{$playIcon.width}"
+        loading="lazy"
+      >
+    </button>
+  </div>
+{/template}

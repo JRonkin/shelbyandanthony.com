@@ -1,6 +1,16 @@
 {namespace sections.about}
 
 {template .OurStory}
+  {@param assets: map<string, [
+    height: int,
+    orientation: int,
+    path: uri,
+    size: int,
+    trustedUrl: uri,
+    url: uri,
+    width: int
+  ]>}
+
   {call modules.Section}
     {param baseClass: 'OurStory' /}
     {param content kind="html"}
@@ -10,13 +20,10 @@
       <p class="OurStory-paragraph">
         On their second anniversary, Anthony proposed with the help of some special guests (watch below!).
       </p>
-      <iframe class="OurStory-video"
-        src="https://www.youtube.com/embed/MmAtXFNVlVc?color=white&modestbranding=1&rel=0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="aspect-ratio: 16 / 9"
-        loading="lazy"
-      ></iframe>
+      {call modules.YouTube data="all"}
+        {param additionalClasses: 'OurStory-video' /}
+        {param videoId: 'MmAtXFNVlVc' /}
+      {/call}
       <p class="OurStory-paragraph">
         On their fourth anniversary, they can’t wait to commit themselves to each other in front of their close friends and loved ones.
       </p>
