@@ -15,29 +15,19 @@
     [
       'image': $assets['images/logo-amazon.png'],
       'name': 'Amazon',
-      'url': 'https://example.com'
+      'url': 'https://www.amazon.com/wedding/share/shelbyandanthony23'
     ],
     [
-      'image': $assets['images/logo-bedbathbeyond.png'],
-      'name': 'Bed Bath & Beyond',
-      'url': 'https://example.com'
-    ],
-    [
-      'image': $assets['images/logo-ikea.png'],
-      'name': 'IKEA',
-      'url': 'https://example.com'
-    ],
-    [
-      'image': $assets['images/logo-macys.png'],
-      'name': 'Macy\'s',
-      'url': 'https://example.com'
+      'image': $assets['images/logo-gofundme.png'],
+      'name': 'GoFundMe',
+      'url': 'https://www.gofundme.com/f/shelby-anthonys-honeymoon-vacation'
     ]
   ] /}
 
   {call modules.Section}
     {param baseClass: 'Registry' /}
     {param content kind="html"}
-      We have registries at these stores:
+      We have a gift registry on Amazon. If you’d prefer to make a monetary gift, you can also add a contribution to our Honeymoon Fund.
 
       <ul class="Registry-stores">
         {foreach $store in $stores}
