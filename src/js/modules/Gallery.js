@@ -14,8 +14,6 @@ export class Gallery {
   }
 
   _init() {
-    const secretSoundFile = this.secretEl.dataset.audio;
-
     this.el.querySelectorAll('.js-gallery-button').forEach((button, i) => {
       button.addEventListener('click', () => this.openModal(i));
     });
@@ -24,7 +22,7 @@ export class Gallery {
       button.addEventListener('click', () => this.revealSecrets());
     };
 
-    if (this.secretEl.dataset.audio) {
+    if (this.secretEl && this.secretEl.dataset.audio) {
       this.secretAudioPromise = fetch(this.secretEl.dataset.audio)
         .then(res => res.blob())
         .then(audioBlob => new Audio(URL.createObjectURL(audioBlob)));

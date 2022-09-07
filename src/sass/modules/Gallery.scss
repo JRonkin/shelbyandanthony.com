@@ -134,6 +134,11 @@ $gallery-modal-button-size: 56px !default;
     width: 100%;
     max-height: calc(100vh - #{2 * ($gallery-modal-margin-mobile + 32px)});
     object-fit: contain;
+
+    &:last-child
+    {
+      margin-bottom: 24px;
+    }
   }
 
   &-slide:not(.tns-slide-active) &-slideImage
