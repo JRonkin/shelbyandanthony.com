@@ -85,6 +85,7 @@ module.exports = env => ({
     new RenderSoyPlugin({
       templateData: {
         hostname: 'www.shelbyandanthony.com',
+        isoTimestamp: new Date().toISOString(),
         protocol: 'https:'
       },
       templateFiles: path.resolve(srcPath, 'templates', '**', '*.soy'),
@@ -94,6 +95,7 @@ module.exports = env => ({
         'page.home': 'url.home',
         'page.itinerary': 'url.itinerary',
         'page.registry': 'url.registry',
+        'page.sitemapXml': 'url.sitemapXml',
         'page.travel': 'url.travel'
       }
     })
