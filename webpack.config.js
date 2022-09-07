@@ -84,18 +84,20 @@ module.exports = env => ({
     }),
     new RenderSoyPlugin({
       templateData: {
-        hostname: 'www.shelbyandanthony.com',
+        hostname: 'jronkin.github.io/shelbyandanthony.com',
         isoTimestamp: new Date().toISOString(),
         protocol: 'https:'
       },
       templateFiles: path.resolve(srcPath, 'templates', '**', '*.soy'),
       templates: {
-        'page.fourOhFour': 'url.fourOhFour',
+        'file.cname': 'url.cname',
+        'file.robots_txt': 'url.robots_txt',
+        'file.sitemap_xml': 'url.sitemap_xml',
         'page.about': 'url.about',
+        'page.fourOhFour': 'url.fourOhFour',
         'page.home': 'url.home',
         'page.itinerary': 'url.itinerary',
         'page.registry': 'url.registry',
-        'page.sitemapXml': 'url.sitemapXml',
         'page.travel': 'url.travel'
       }
     })

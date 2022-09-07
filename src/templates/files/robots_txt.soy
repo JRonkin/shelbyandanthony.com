@@ -1,0 +1,16 @@
+{namespace file}
+
+{template .robots_txt}
+  {@param hostname: uri}
+  {@param protocol: string}
+
+  {let $sitemapUrl kind="uri"}
+    {call common.helpers.absoluteUrl data="all"}
+      {param pathname kind="uri"}{call url.sitemap_xml /}{/param}
+    {/call}
+  {/let}
+
+  User-agent: *
+  {\n}Disallow: /
+  {\n}Sitemap: {$sitemapUrl}
+{/template}
