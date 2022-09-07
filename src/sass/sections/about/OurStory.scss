@@ -2,14 +2,27 @@
 
 .OurStory
 {
-  &-paragraph
+  &-paragraph,
+  &-video
   {
-    text-indent: 4ch;
-
     &:not(:first-child)
     {
       margin-top: 1em;
     }
+  }
+
+  &-paragraph
+  {
+    text-indent: 4ch;
+  }
+
+  &-video
+  {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    max-width: 700px;
   }
 
   @include bpgte($bp-desktop-min)
