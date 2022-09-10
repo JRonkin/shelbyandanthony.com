@@ -25,7 +25,15 @@
     {param pageContent kind="html"}
       {call modules.Banner}
         {param content kind="html"}
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Please visit
+          {sp}
+          <a class="Link--primary"
+             href="https://health.ny.gov"
+             {call common.helpers.linkNewTab /}>
+            health.ny.gov
+          </a>
+          {sp}
+          for the latest mandates and health guidelines related to the ongoing outbreaks of COVID-19, monkeypox, and poliovirus. Masks and vaccinations are highly encouraged, but may not be required by the State or the venue at the time of the wedding.
         {/param}
         {param modifier: 'info' /}
       {/call}
@@ -33,7 +41,6 @@
         {param title: 'Travel Information' /}
       {/call}
       {call sections.travel.Ceremony data="all" /}
-      {call sections.travel.Reception data="all" /}
       {call sections.travel.Hotels data="all" /}
       {call sections.travel.Parking data="all" /}
       {call sections.travel.Transportation data="all" /}

@@ -1,46 +1,12 @@
 {namespace sections.travel}
 
 {template .Parking}
-  {@param assets: map<string, [
-    height: int,
-    orientation: int,
-    path: uri,
-    size: int,
-    trustedUrl: uri,
-    url: uri,
-    width: int
-  ]>}
-
   {call modules.Section}
     {param baseClass: 'Parking' /}
     {param content kind="html"}
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        For rates and more parking information, see
-        {sp}
-        <a class="Link--primary"
-           href="https://example.com"
-           {call common.helpers.linkNewTab /}>
-          Parking Information
-        </a>
-        . For detailed driving directions, see
-        {sp}
-        <a class="Link--primary"
-           href="https://example.com"
-           {call common.helpers.linkNewTab /}>
-          Driving Directions
-        </a>
-        .
+      <div class="Parking-description">
+        Valet parking will be available on-site.
       </div>
-
-      {call modules.LocationMap}
-        {param additionalClasses: 'Parking-map' /}
-        {param embedUrl kind="uri"}
-          https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d!2d!3d!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e82579ac9e08f7%3A0xee483764109b8f95!2sLarkfield!5e0!3m2!1sen!2sus!4v1661990400000!5m2!1sen!2sus
-        {/param}
-        {param mapImage: $assets['images/placeholder.png'] /}
-        {param mapImageAlt: 'Map showing parking' /}
-      {/call}
     {/param}
     {param title: 'Parking' /}
   {/call}

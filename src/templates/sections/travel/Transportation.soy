@@ -1,50 +1,27 @@
 {namespace sections.travel}
 
 {template .Transportation}
-  {let $directionsSections: [
-    [
-      'steps': [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-      ],
-      'title': 'From the Airport'
-    ],
-    [
-      'steps': [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-      ],
-      'title': 'From the Train Station'
-    ]
-  ] /}
-
   {call modules.Section}
     {param baseClass: 'Transportation' /}
     {param content kind="html"}
       <div class="Transportation-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Click the map widget above to obtain detailed Google Maps driving directions from your location.
       </div>
 
       <div class="Transportation-directionsWrapper">
-        {foreach $directionsSection in $directionsSections}
-          <div class="Transportation-directions">
-            <h3 class="Transportation-directionsTitle">
-              {$directionsSection.title}
-            </h3>
-
-            <ol class="Transportation-directionsSteps">
-              {foreach $step in $directionsSection.steps}
-                <li class="Transportation-directionsStep">
-                  {$step}
-                </li>
-              {/foreach}
-            </ol>
-          </div>
-        {/foreach}
+        <ul class="Transportation-directions">
+          <li class="Transportation-directionsStep">
+            From the <span class="Transportation-emphasis">Northern State Parkway</span> eastbound, take <span class="Transportation-emphasis">Exit 42N</span> towards Northport.
+          </li>
+          <li class="Transportation-directionsStep">
+            From the <span class="Transportation-emphasis">Long Island Expressway</span> eastbound, take <span class="Transportation-emphasis">Exit 51</span> towards Deer Park Ave / South Service Rd.
+          </li>
+          <li class="Transportation-directionsStep">
+            From the <span class="Transportation-emphasis">Sagitikos / Sunken Meadow Parkway</span> northbound, take <span class="Transportation-emphasis">Exit SM1 W</span> towards Commack Rd / Northern State Pkwy.
+          </li>
+        </ul>
       </div>
     {/param}
-    {param title: 'Public Transportation' /}
+    {param title: 'Directions' /}
   {/call}
 {/template}

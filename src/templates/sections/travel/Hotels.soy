@@ -3,48 +3,24 @@
 {template .Hotels}
   {let $otherHotels: [
     [
-      'name': 'Some Hotel',
-      'url': 'https://example.com'
+      'name': 'Hampton Inn Long Island (Commack Rd, Commack)',
+      'url': 'https://www.hilton.com/en/hotels/comnyhx-hampton-long-island-commack/'
     ],
     [
-      'name': 'Some Hotel',
-      'url': 'https://example.com'
+      'name': 'Hyatt Regency Long Island (Motor Pkwy, Happauge)',
+      'url': 'https://www.hyatt.com/en-US/hotel/new-york/hyatt-regency-long-island/haupp'
     ],
     [
-      'name': 'Some Hotel',
-      'url': 'https://example.com'
+      'name': 'Marriott Melville LI (Walt Whitman Rd, Melville)',
+      'url': 'https://www.marriott.com/en-us/hotels/nycml-marriott-melville-long-island/overview/'
     ]
   ] /}
 
   {call modules.Section}
     {param baseClass: 'Hotels' /}
     {param content kind="html"}
-      <div class="Hotels-description">
-        Rooms have been blocked off in two nearby hotels:
-        {sp}
-        <a class="Hotels-link" href="{call constants.bookHotelOne /}"{call common.helpers.linkNewTab /}>
-          Hotel 1
-        </a>
-        {sp}
-        and
-        {sp}
-        <a class="Hotels-link" href="{call constants.bookHotelTwo /}"{call common.helpers.linkNewTab /}>
-          Hotel 2
-        </a>
-        . Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </div>
-
-      <div class="Hotels-ctaWrapper">
-        <a class="Hotels-cta" href="{call constants.bookHotelOne /}"{call common.helpers.linkNewTab /}>
-          Book a Hotel 1 Room
-        </a>
-        <a class="Hotels-cta" href="{call constants.bookHotelTwo /}"{call common.helpers.linkNewTab /}>
-          Book a Hotel 2 Room
-        </a>
-      </div>
-
       <div class="Hotels-other">
-        Other hotels in the area include:
+        If you are traveling to be with us, hotels in the area include:
 
         <ul class="Hotels-list">
           {foreach $hotel in $otherHotels}
@@ -55,10 +31,6 @@
             </li>
           {/foreach}
         </ul>
-
-        <div class="Hotels-otherNote">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
       </div>
     {/param}
     {param id: 'hotels' /}

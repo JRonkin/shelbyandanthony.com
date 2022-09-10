@@ -9,23 +9,6 @@
     align-items: center;
   }
 
-  &-ctaWrapper
-  {
-    display: flex;
-    margin-left: -24px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &-cta
-  {
-    @extend .Button--primary;
-
-    margin-top: 24px;
-    margin-left: 24px;
-  }
-
   &-other
   {
     display: flex;
@@ -44,18 +27,5 @@
   &-link
   {
     @extend .Link--primary;
-  }
-
-  @include bplte($bp-mobile-max)
-  {
-    &-ctaWrapper
-    {
-      flex-direction: column;
-    }
-  }
-
-  &-otherNote
-  {
-    margin-top: 16px;
   }
 }
