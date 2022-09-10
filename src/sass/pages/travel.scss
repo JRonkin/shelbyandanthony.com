@@ -24,6 +24,17 @@
   }
 }
 
+@include bplte($bp-mobile-max)
+{
+  .LocationMap
+  {
+    &-map
+    {
+      max-height: calc(100vh - #{$header-height-mobile + 32px});
+    }
+  }
+}
+
 @include bpgte($bp-desktop-min)
 {
   .LocationMap
