@@ -85,7 +85,7 @@ module.exports = env => ({
     new RenderSoyPlugin({
       templateData: {
         blockSearchEngines: true,
-        hostname: 'www.shelbyandanthony.com',
+        hostname: 'shelbyandanthony.com',
         isoTimestamp: new Date().toISOString(),
         protocol: 'https:'
       },
