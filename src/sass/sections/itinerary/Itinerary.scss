@@ -25,18 +25,17 @@
   &-time,
   &-text
   {
+    width: 50%;
     padding-bottom: 8px;
   }
 
   &-time
   {
-    @extend .List-item;
-
-    display: flex;
+    text-align: end;
+    white-space: nowrap;
 
     &::after
     {
-      margin-left: auto;
       padding: 0 8px;
       content: '—';
     }
