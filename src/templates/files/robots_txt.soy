@@ -1,6 +1,7 @@
 {namespace file}
 
 {template .robots_txt}
+  {@param blockSearchEngines: bool}
   {@param hostname: uri}
   {@param protocol: string}
 
@@ -11,6 +12,8 @@
   {/let}
 
   User-agent: *
-  {\n}Disallow: /
+  {if $blockSearchEngines}
+    {\n}Disallow: /
+  {/if}
   {\n}Sitemap: {$sitemapUrl}
 {/template}

@@ -11,6 +11,7 @@
     width: int
   ]>}
   {@param baseUrl: uri}
+  {@param blockSearchEngines: bool}
   {@param? description: string}
   {@param? favicon: uri}
   {@param? headIncludes: html}
@@ -30,8 +31,6 @@
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
 
-      <meta name="robots" content="noindex">
-
       {if $title}
         <title>
           {$title}
@@ -47,6 +46,10 @@
       {/if}
 
       <meta name="theme-color" content="#fff">
+
+      {if $blockSearchEngines}
+        <meta name="robots" content="noindex">
+      {/if}
 
       {if $url}
         <link rel="canonical" href="{$url}">
