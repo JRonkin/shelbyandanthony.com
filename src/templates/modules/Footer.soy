@@ -11,5 +11,12 @@
     width: int
   ]>}
 
-  <footer class="Footer" style="background-image: url({$assets['images/border.jpg'].url})"></footer>
+  {let $prefixes: ['-webkit-'] /}
+  {let $maskStyle kind="css"}
+    mask-image: url({$assets['images/border.png'].url})
+  {/let}
+
+  <footer class="Footer"
+    style="{foreach $prefix in $prefixes}{$prefix}{$maskStyle};{/foreach}{$maskStyle}"
+  ></footer>
 {/template}

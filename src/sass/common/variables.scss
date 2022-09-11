@@ -6,22 +6,32 @@ $font-family-secondary: 'Vollkorn', serif;
 $font-family-cursive: 'Great Vibes', cursive;
 
 $font-weight-normal: 300;
+$font-weight-medium: 400;
 $font-weight-bold: 600;
 
-$navy-blue: #061572;
-$navy-blue-faded: #333d7f;
+$butterfield: #f4c456;
+$confident-yellow: #f7d600;
+$dewberry: #403458;
+$extra-white: #eff0eb;
+$frank-blue: #302792;
+$polished-mahogany: #432821;
+$framboise: #803053;
+
 $black: #000;
 $gray-light: #ccc;
 $gray-lightest: #eee;
-$white: #fff;
+$white: $extra-white;
 
-$theme-color-primary: $navy-blue;
-$theme-color-primary-alt: $navy-blue-faded;
-$theme-color-dark: $black;
+$theme-color-primary: $frank-blue;
+$theme-color-primary-alt: $theme-color-primary;
+$theme-color-dark: $polished-mahogany;
 $theme-color-light: $white;
 
 $text-color-primary: $theme-color-dark;
 $text-color-light: $theme-color-light;
+$text-color-light-title: $confident-yellow;
+
+$background-dark: darken($dewberry, 10%);
 
 $border-light: 1px solid $gray-light;
 $border-lightest: 1px solid $gray-lightest;

@@ -4,8 +4,9 @@
 {
   margin-top: 16px;
   height: 40px;
-  background-position: center;
-  background-size: auto 100%;
+  mask-position: center;
+  mask-size: auto 100%;
+  background-color: $theme-color-dark;
 
   @include bpgte($bp-desktop-min)
   {
