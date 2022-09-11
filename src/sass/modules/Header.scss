@@ -7,7 +7,7 @@
   top: 0;
   z-index: 1;
   box-shadow: $shadow-default;
-  background: $theme-color-light;
+  background: $white;
   align-items: center;
   padding: 0 16px;
 
@@ -66,9 +66,10 @@
 
   &-cta
   {
-    @extend .Button--tertiary;
+    @extend .Button--primary;
 
     margin-left: auto;
+    color: $white;
   }
 
   &-link
@@ -94,7 +95,7 @@
       z-index: -1;
       visibility: hidden;
       height: 0;
-      background: $theme-color-light;
+      background: $white;
       overflow-y: auto;
       transition: height 0.3s ease, visibility 0s 0.3s;
     }

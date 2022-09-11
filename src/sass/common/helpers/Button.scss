@@ -38,17 +38,7 @@
   {
     @extend .Button;
 
-    background: $theme-color-light;
-    color: $text-color-primary;
-
-
-  }
-
-  &--tertiary
-  {
-    @extend .Button;
-
-    background: $theme-color-secondary;
+    background: $white;
     color: $text-color-primary;
   }
 }
