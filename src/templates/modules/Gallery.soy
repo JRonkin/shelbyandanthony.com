@@ -16,7 +16,7 @@
   <section class="Gallery js-gallery">
     <div class="Gallery-display">
       {foreach $image in $images}
-        <button class="Gallery-button js-gallery-button">
+        <button class="Gallery-button js-gallery-button" aria-label="Open gallery">
           <img class="Gallery-image"
                src="{$image.thumbnail.url}"
                alt="{$image.caption}"
@@ -25,7 +25,7 @@
         </button>
       {/foreach}
       {foreach $image in $secretImages ?: []}
-        <button class="Gallery-button Gallery-button--secret js-gallery-button">
+        <button class="Gallery-button Gallery-button--secret js-gallery-button" aria-label="Open gallery">
           <img class="Gallery-image"
                src="{$image.thumbnail.url}"
                alt="{$image.caption}"
