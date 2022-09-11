@@ -1,0 +1,13 @@
+/** @define ComingSoon */
+
+.ComingSoon
+{
+  text-align: center;
+
+  &-cta
+  {
+    @extend .Button--primary;
+
+    margin-top: 24px;
+  }
+}

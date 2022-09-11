@@ -15,6 +15,7 @@ module.exports = env => ({
     home: path.resolve(srcPath, 'js', 'pages', 'home.js'),
     itinerary: path.resolve(srcPath, 'js', 'pages', 'itinerary.js'),
     registry: path.resolve(srcPath, 'js', 'pages', 'registry.js'),
+    rsvp: path.resolve(srcPath, 'js', 'pages', 'rsvp.js'),
     travel: path.resolve(srcPath, 'js', 'pages', 'travel.js')
   },
   mode: env.production ? 'production' : 'development',
@@ -99,6 +100,7 @@ module.exports = env => ({
         'page.home': 'url.home',
         'page.itinerary': 'url.itinerary',
         'page.registry': 'url.registry',
+        'page.rsvp': 'url.rsvp',
         'page.travel': 'url.travel'
       }
     })
