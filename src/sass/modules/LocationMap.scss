@@ -22,12 +22,11 @@
   {
     display: flex;
 
-    &-map,
-    &-image
+    &-image,
+    &-map
     {
       height: auto;
       width: 0;
-      min-height: 0;
       flex-grow: 1;
     }
 
@@ -35,6 +34,11 @@
     {
       margin-right: 32px;
       margin-bottom: 0;
+    }
+
+    &-map:not(:only-child)
+    {
+      min-height: 0;
     }
   }
 }
