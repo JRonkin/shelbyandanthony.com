@@ -19,8 +19,6 @@
   &-events
   {
     margin: 16px auto -8px;
-    width: 100%;
-    max-width: 400px;
     text-align: start;
   }
 
@@ -34,11 +32,11 @@
   {
     @extend .List-item;
 
-    text-align: end;
-    white-space: nowrap;
+    display: flex;
 
     &::after
     {
+      margin-left: auto;
       padding: 0 8px;
       content: '—';
     }

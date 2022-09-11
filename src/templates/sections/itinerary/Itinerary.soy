@@ -9,60 +9,45 @@
     {/call}
   {/let}
 
-  {let $timeStartRehearsal kind="html"}{call constants.timeStartRehearsal /}{/let}
-  {let $timeStartRehearsalDinner kind="html"}{call constants.timeStartRehearsalDinner /}{/let}
-  {let $timeStartCeremony kind="html"}{call constants.timeStartCeremony /}{/let}
-  {let $timeStartReception kind="html"}{call constants.timeStartReception /}{/let}
+  {let $timeCeremony kind="html"}
+    {call constants.timeStartCeremony /} - {call constants.timeEndCeremony /}
+  {/let}
+  {let $timeCocktailHour kind="html"}
+    {call constants.timeStartCocktailHour /} - {call constants.timeEndCocktailHour /}
+  {/let}
+  {let $timeReception kind="html"}
+    {call constants.timeStartReception /} - {call constants.timeEndReception /}
+  {/let}
 
-  {let $rehearsalText kind="html"}
-    Wedding rehearsal at
-    {sp}
-    <a class="Link--primary" href="{call constants.directionsUrlCeremonyVenue /}"{call common.helpers.linkNewTab /}>
-      Larkfield Manor
-    </a>
-  {/let}
-  {let $rehearsalDinnerText kind="html"}
-    Rehearsal dinner
-  {/let}
   {let $ceremonyText kind="html"}
-    Wedding at
+    Ceremony at
     {sp}
     <a class="Link--primary" href="{call constants.directionsUrlCeremonyVenue /}"{call common.helpers.linkNewTab /}>
       Larkfield Manor
     </a>
+  {/let}
+  {let $cocktailHourText kind="html"}
+    Cocktail Hour
   {/let}
   {let $receptionText kind="html"}
-    Reception at
-    {sp}
-    <a class="Link--primary" href="{call constants.directionsUrlReceptionVenue /}"{call common.helpers.linkNewTab /}>
-      Larkfield Manor
-    </a>
+    Reception
   {/let}
 
   {let $itinerary: [
-    [
-      'date': 'Friday, April 28 2023',
-      'events': [
-        [
-          'text': $rehearsalText,
-          'time': $timeStartRehearsal
-        ],
-        [
-          'text': $rehearsalDinnerText,
-          'time': $timeStartRehearsalDinner
-        ]
-      ]
-    ],
     [
       'date': 'Saturday, April 29 2023',
       'events': [
         [
           'text': $ceremonyText,
-          'time': $timeStartCeremony
+          'time': $timeCeremony
+        ],
+        [
+          'text': $cocktailHourText,
+          'time': $timeCocktailHour
         ],
         [
           'text': $receptionText,
-          'time': $timeStartReception
+          'time': $timeReception
         ]
       ]
     ]
@@ -88,7 +73,9 @@
               {foreach $event in $day.events}
                 <tr class="Itinerary-event">
                   <td class="Itinerary-time">
-                    {$event.time}
+                    <span>
+                      {$event.time}
+                    </span>
                   </td>
                   <td class="Itinerary-text">
                     {$event.text}

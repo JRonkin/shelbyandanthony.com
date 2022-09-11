@@ -15,11 +15,13 @@
     [
       'image': $assets['images/logo-amazon.png'],
       'name': 'Amazon',
+      'text': 'Wedding Registry',
       'url': 'https://www.amazon.com/wedding/share/shelbyandanthony23'
     ],
     [
       'image': $assets['images/logo-gofundme.png'],
       'name': 'GoFundMe',
+      'text': 'Honeymoon Fund',
       'url': 'https://www.gofundme.com/f/shelby-anthonys-honeymoon-vacation'
     ]
   ] /}
@@ -27,7 +29,7 @@
   {call modules.Section}
     {param baseClass: 'Registry' /}
     {param content kind="html"}
-      We have a gift registry on Amazon. If you’d prefer to make a monetary gift, you can also add a contribution to our Honeymoon Fund.
+      We have a wedding registry available at the link below via Amazon. If you’d prefer to make a monetary gift, you can also add a contribution to our Honeymoon Fund via GoFundMe.
 
       <ul class="Registry-stores">
         {foreach $store in $stores}
@@ -37,6 +39,11 @@
                    src="{$store.image.url}"
                    alt="{$store.name}"
                    style="aspect-ratio: {$store.image.width} / {$store.image.height}">
+              {if $store.text}
+                <span class="Registry-linkText">
+                  {$store.text}
+                </span>
+              {/if}
             </a>
           </li>
         {/foreach}

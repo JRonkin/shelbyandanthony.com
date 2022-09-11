@@ -12,7 +12,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
   }
 
   &-store
@@ -23,34 +22,42 @@
   &-link
   {
     display: flex;
-    position: relative;
-    top: 0;
     box-shadow: $shadow-default;
     border-radius: 8px;
     width: 240px;
+    height: 100%;
     border: $border-lightest;
     padding: 20px;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    transition: box-shadow $transition-default, top $transition-default;
+    text-align: center;
+    transition: box-shadow $transition-default, transform $transition-default;
 
     &:hover
     {
-      top: -4px;
+      transform: translateY(-4px);
       box-shadow: $shadow-large;
     }
 
     &:active
     {
-      top: 2px;
+      transform: translateY(2px);
       box-shadow: none;
     }
   }
 
   &-image
   {
+    margin: auto;
     width: 100%;
     object-fit: contain;
+  }
+
+  &-linkText
+  {
+    margin-top: 16px;
+    font-weight: $font-weight-bold;
   }
 
   @include bpgte($bp-desktop-min)
@@ -69,7 +76,6 @@
 
     &-link
     {
-      height: 144px;
       width: 256px;
     }
   }
