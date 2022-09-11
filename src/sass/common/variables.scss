@@ -24,8 +24,9 @@ $white: $extra-white;
 
 $theme-color-primary: $frank-blue;
 $theme-color-primary-alt: $theme-color-primary;
+$theme-color-secondary: $butterfield;
 $theme-color-dark: $polished-mahogany;
-$theme-color-light: $white;
+$theme-color-light: lighten($butterfield, 25%);
 
 $text-color-primary: $theme-color-dark;
 $text-color-light: $theme-color-light;
@@ -33,6 +34,7 @@ $text-color-light-title: $confident-yellow;
 
 $background-dark: darken($dewberry, 10%);
 
+$border-dark-dotted: 1px dotted $theme-color-dark;
 $border-light: 1px solid $gray-light;
 $border-lightest: 1px solid $gray-lightest;
 

@@ -14,6 +14,12 @@
   transition: $transition-default;
   transition-property: outline-color, background-color;
 
+  &:hover,
+  &:focus
+  {
+    outline-color: currentColor;
+  }
+
   &--primary
   {
     @extend .Button;
@@ -24,7 +30,6 @@
     &:hover,
     &:focus
     {
-      outline-color: currentColor;
       background: $theme-color-primary-alt;
     }
   }
@@ -36,10 +41,14 @@
     background: $theme-color-light;
     color: $text-color-primary;
 
-    &:hover,
-    &:focus
-    {
-      outline-color: currentColor;
-    }
+
+  }
+
+  &--tertiary
+  {
+    @extend .Button;
+
+    background: $theme-color-secondary;
+    color: $text-color-primary;
   }
 }
