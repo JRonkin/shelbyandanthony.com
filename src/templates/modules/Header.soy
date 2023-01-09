@@ -35,11 +35,6 @@
       {param pathname kind="uri"}{call url.registry /}{/param}
     {/call}
   {/let}
-  {let $rsvpPath kind="uri"}
-    {call common.helpers.cleanPathname}
-      {param pathname kind="uri"}{call url.rsvp /}{/param}
-    {/call}
-  {/let}
 
   {let $links: [
     ['text': 'Home', 'url': $baseUrl + $homePath],
@@ -68,11 +63,7 @@
       {/foreach}
     </nav>
 
-    // TODO: Uncomment this and remove the CTA below when the RSVP URL is ready
-    // <a class="Header-cta" href="{call constants.rsvpUrl /}"{call common.helpers.linkNewTab /}>
-    //   RSVP
-    // </a>
-    <a class="Header-cta" href="{$baseUrl + $rsvpPath}">
+    <a class="Header-cta" href="{call constants.rsvpUrl /}"{call common.helpers.linkNewTab /}>
       RSVP
     </a>
   </header>
