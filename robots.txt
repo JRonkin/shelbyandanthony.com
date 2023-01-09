@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://shelbyandanthony.com/sitemap.xml
