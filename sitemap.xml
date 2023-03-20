@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://shelbyandanthony.com/our-story/</loc>
+    <changefreq>weekly</changefreq>
+    <lastmod>2023-03-20T22:34:09.775Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shelbyandanthony.com/our-story/"></xhtml:link>
+  </url>
+  <url>
+    <loc>https://shelbyandanthony.com</loc>
+    <changefreq>weekly</changefreq>
+    <lastmod>2023-03-20T22:34:09.775Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shelbyandanthony.com"></xhtml:link>
+  </url>
+  <url>
+    <loc>https://shelbyandanthony.com/itinerary/</loc>
+    <changefreq>weekly</changefreq>
+    <lastmod>2023-03-20T22:34:09.775Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shelbyandanthony.com/itinerary/"></xhtml:link>
+  </url>
+  <url>
+    <loc>https://shelbyandanthony.com/registry/</loc>
+    <changefreq>weekly</changefreq>
+    <lastmod>2023-03-20T22:34:09.775Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shelbyandanthony.com/registry/"></xhtml:link>
+  </url>
+  <url>
+    <loc>https://shelbyandanthony.com/travel/</loc>
+    <changefreq>weekly</changefreq>
+    <lastmod>2023-03-20T22:34:09.775Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://shelbyandanthony.com/travel/"></xhtml:link>
+  </url>
+</urlset>
